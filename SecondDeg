@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c;
+    double discriminant, racine1, racine2;
+
+    // Demander à l'utilisateur d'entrer les coefficients a, b et c
+    printf("Entrez les coefficients a, b et c de l'equation ax^2 + bx + c = 0 :\n");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    // Calculer le discriminant
+    discriminant = b * b - 4 * a * c;
+
+    // Déterminer les racines en fonction du discriminant
+    if (discriminant > 0) {
+        // Deux racines réelles distinctes
+        racine1 = (-b + sqrt(discriminant)) / (2 * a);
+        racine2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("Les racines de l'equation sont : %.2lf et %.2lf\n", racine1, racine2);
+    } else if (discriminant == 0) {
+        // Une racine réelle double
+        racine1 = racine2 = -b / (2 * a);
+        printf("L'equation a une racine double : %.2lf\n", racine1);
+    } else {
+        // Racines imaginaires
+        double partieReelle = -b / (2 * a);
+        double partieImaginaire = sqrt(-discriminant) / (2 * a);
+        printf("Les racines de l'equation sont : %.2lf + %.2lfi et %.2lf - %.2lfi\n", partieReelle, partieImaginaire, partieReelle, partieImaginaire);
+    }
+
+    return 0;
+}
