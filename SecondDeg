@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+//There is a nez version of this code on on this same repository
 int main() {
     double a, b, c;
     double discriminant, racine1, racine2;
